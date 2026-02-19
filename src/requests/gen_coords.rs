@@ -1,6 +1,6 @@
 pub fn gen_coords() -> (f64, f64) {
-    let lat: f64 = 38.369159;
-    let lon: f64 = 27.210191;
+    let lat: f64 = 38.369433;
+    let lon: f64 = 27.210460;
     // Add random noise to the coordinates 0.000001 to 0.000009
     let noise_lat: f64 = (rand::random::<u32>() % 9 + 1) as f64 * 0.000001;
     let noise_lon: f64 = (rand::random::<u32>() % 9 + 1) as f64 * 0.000001;
