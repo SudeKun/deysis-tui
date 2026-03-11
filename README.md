@@ -24,6 +24,24 @@ cd deysis-tui
 cargo run --release
 ```
 
+### Shortcuts
+#### Linux
+```bash
+echo "alias deysis='~/deysis-tui/target/release/deysis-tui ; cd ~'" >> ~/.bashrc
+source ~/.bashrc
+```
+#### macOS
+```zsh
+echo "alias deysis='~/deysis-tui/target/release/deysis-tui ; cd ~'" >> ~/.zshrc
+source ~/.zshrc
+```
+#### Windows
+```powershell
+if (!(Test-Path -Path $PROFILE)) { New-Item -ItemType File -Path $PROFILE -Force }
+Add-Content -Path $PROFILE -Value "function deysis { & `"$HOME\deysis-tui\target\release\deysis-tui.exe`"; Set-Location ~ }"
+& $PROFILE
+```
+
 **Requirements**: Rust 1.70+
 
 ---
