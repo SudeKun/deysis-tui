@@ -4,7 +4,7 @@
 
 [![Rust](https://img.shields.io/badge/rust-1.90%2B-orange.svg)](https://www.rust-lang.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/umceko/deysis-tui/releases)
+[![Version](https://img.shields.io/badge/version-1.0.1-green.svg)](https://github.com/umceko/deysis-tui/releases)
 
 ## ✨ Features
 
@@ -27,19 +27,19 @@ cargo run --release
 ### Shortcuts
 #### Linux
 ```bash
-echo "alias deysis='~/deysis-tui/target/release/deysis-tui ; cd ~'" >> ~/.bashrc
+echo "alias deysis='cd ~/deysis-tui && ./target/release/deysis-tui ; cd ~ && clear'" >> ~/.bashrc
 source ~/.bashrc
 ```
 #### macOS
 ```zsh
-echo "alias deysis='~/deysis-tui/target/release/deysis-tui ; cd ~'" >> ~/.zshrc
+echo "alias deysis='cd ~/deysis-tui && ./target/release/deysis-tui ; cd ~ && clear'" >> ~/.zshrc
 source ~/.zshrc
 ```
 #### Windows
 ```powershell
 if (!(Test-Path -Path $PROFILE)) { New-Item -ItemType File -Path $PROFILE -Force }
-Add-Content -Path $PROFILE -Value "function deysis { & `"$HOME\deysis-tui\target\release\deysis-tui.exe`"; Set-Location ~ }"
-& $PROFILE
+Add-Content -Path $PROFILE -Value 'function deysis { Set-Location "$HOME\deysis-tui"; .\target\release\deysis-tui.exe; Set-Location ~; cls }'
+. $PROFILE
 ```
 
 **Requirements**: Rust 1.70+
