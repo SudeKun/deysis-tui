@@ -19,7 +19,7 @@
 ## 🚀 Installation
 
 ```bash
-git clone https://github.com/umceko/deysis-tui.git
+git clone https://github.com/SudeKun/deysis-tui.git
 cd deysis-tui
 cargo run --release
 ```
