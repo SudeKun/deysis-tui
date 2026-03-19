@@ -26,9 +26,26 @@ cargo run --release
 
 ### Shortcuts
 #### Linux
+##### Bash
 ```bash
 echo "alias deysis='cd ~/deysis-tui && ./target/release/deysis-tui ; cd ~ && clear'" >> ~/.bashrc
 source ~/.bashrc
+```
+##### Fish
+```fish
+function deysis
+    # Save where we are now
+    set -l current_dir (pwd)
+
+    # Go to the app folder
+    cd ~/deysis-tui
+
+    # Run the app using the correct name we found earlier
+    ./target/release/deysistui
+
+    # After the app closes, go back to where we started
+    cd $current_dir
+end
 ```
 #### macOS
 ```zsh
